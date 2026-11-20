@@ -1,5 +1,5 @@
 // AYI BEAUTY TOUCH - Main JS
-const WA_NUMBER = "23491029372171";
+const WA_NUMBER = "2349029372171";
 
 document.getElementById('year').innerText = new Date().getFullYear();
 
