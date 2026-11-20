@@ -1,5 +1,5 @@
 // AYI BEAUTY TOUCH - Main JS
-const WA_NUMBER = "2349156002887";
+const WA_NUMBER = "23491029372171";
 
 document.getElementById('year').innerText = new Date().getFullYear();
 
@@ -87,9 +87,13 @@ form.addEventListener("submit", async (e) => {
 
 // --- 4. WHATSAPP DIRECT - Uses only fields that exist ---
 document.getElementById('waDirect').addEventListener('click', function(){
-  const name = document.getElementById('name').value || "Someone";
-  const phone = document.getElementById('phone').value || "";
-  const info = document.getElementById('info').value || "I want to book a service";
-  const text = `Hi AYI BEAUTY TOUCH! I'm ${name} (${phone}). ${info}`;
+  const name = document.getElementById('name').value.trim() || "Someone";
+  const phone = document.getElementById('phone').value.trim();
+  const info = document.getElementById('info').value.trim() || "I want to ask about";
+
+  // Only add phone part if phone was filled
+  const phonePart = phone ? ` (${phone})` : "";
+
+  const text = `Hi AYI BEAUTY TOUCH! I'm ${name}${phonePart}. ${info}`;
   this.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 });
